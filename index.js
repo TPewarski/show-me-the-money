@@ -11,7 +11,7 @@ app.get('/bundle', function(req, res){
 });
 
 app.use('/*', (req, res) => {
-    console.log('uh oh you dont have a handler for this request', req.originalUrl);
-})
+    res.status(404).send(`Sorry we were unable to locate ${req.originalUrl}`);
+});
 
 app.listen(5555);
